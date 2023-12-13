@@ -6,7 +6,7 @@
             :key="index"
             :card="card"
             :isMobile="isMobile"
-            :style="{ backgroundImage: `url('../src/assets/images/cards/${card.image}.jpg')` }"/>
+            :style="{ backgroundImage: `url('../assets/images/cards/${card.image}.jpg')` }"/>
     </div>
   </section>
 </template>
