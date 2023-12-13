@@ -1,0 +1,119 @@
+@use "utils/vars" as *;
+
+@mixin btn-text() {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    
+    @media screen and (max-width: $tableWidth) {
+        font-size: 16px;
+        line-height: normal;
+    }
+}
+
+@mixin P18() {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20px;
+    font-style: normal;
+    
+    @media screen and (max-width: $tableWidth) {
+        font-size: 16px;
+        line-height: 16px;
+    }
+    
+    @media screen and (max-width: $smDesktopWidth) {
+        font-size: 14px;
+        line-height: 14px;
+    }
+}
+
+@mixin P18-bold() {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 20px;
+    font-style: normal;
+    
+    @media screen and (max-width: $smDesktopWidth) {
+        font-size: 14px;
+        line-height: 14px;
+    }
+}
+
+@mixin P24-bold() {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 24px;
+    font-style: normal;
+    
+    @media screen and (max-width: $smDesktopWidth) {
+        font-size: 20px;
+        line-height: 20px;
+    }
+}
+
+@mixin P32() {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 38px;
+    
+    @media screen and (max-width: $tableWidth) {
+        font-size: 16px;
+        line-height: 20px;
+    }
+}
+
+@mixin P32-bold() {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 38px;
+    
+    @media screen and (max-width: $tableWidth) {
+        font-size: 16px;
+        line-height: 20px;
+    }
+}
+
+@mixin P40-bold() {
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 48px;
+    
+    @media screen and (max-width: $tableWidth) {
+        font-size: 32px;
+        line-height: 32px;
+    }
+}
+
+@mixin P56-bold() {
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 56px;
+    
+    @media screen and (max-width: $smDesktopWidth) {
+        font-size: 40px;
+        line-height: 40px;
+    }
+    
+    @media screen and (max-width: $tableWidth) {
+        font-size: 28px;
+        line-height: 28px;
+    }
+}
+
+@mixin P80-bold() {
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 64px;
+    
+    @media screen and (max-width: $tableWidth) {
+        font-size: 40px;
+        line-height: 32px;
+    }
+}

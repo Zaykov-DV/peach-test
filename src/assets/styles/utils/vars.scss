@@ -1,0 +1,38 @@
+:root {
+    --primary: #A30C33;
+    --primary-rgb: 163, 12, 51;
+    --secondary: #D43152;
+    --tertiary: #2D3653;
+    --tertiary-rgb: 45, 54, 83;
+    --accent: #B01736;
+    --text-primary: #444444;
+    --text-secondary: #ffffff;
+}
+
+// Font
+$main-font: "ProximaNovaCondensed", sans-serif;
+
+$text-primary: var(--text-primary);
+$text-primary: var(--text-primary);
+$text-secondary: var(--text-secondary);
+$text-accent: var(--accent);
+
+// Media
+$desktopWidth: 1280px;
+$smDesktopWidth: 980px;
+$tableWidth: 768px;
+$phoneWidth: 480px;
+$smPhoneWidth: 320px;
+
+// Btn
+$btn-bg-color: var(--accent);
+$btn-bg-color-hover: var(--secondary);
+$btn-text-color: var(--text-secondary);
+
+// Colors
+$primary-color: var(--primary);
+$primary-color-rgb: var(--primary-rgb);
+$secondary-color: var(--secondary);
+$tertiary-color: var(--tertiary);
+$tertiary-color-rgb: var(--tertiary-rgb);
+$icon-color: var(--accent);
