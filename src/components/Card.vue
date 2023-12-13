@@ -7,6 +7,7 @@
       </div>
       <p class="business__card-text">{{ card.descr }}</p>
     </div>
+
   </div>
 </template>
 

@@ -6,7 +6,8 @@
             :key="index"
             :card="card"
             :isMobile="isMobile"
-            :style="{ backgroundImage: `url('../src/assets/images/cards/${card.image}.jpg')` }"/>
+            :style="{ background:`url(${getImageUrl(card.image) })`}"
+      />
     </div>
   </section>
 </template>
@@ -15,6 +16,10 @@
 <script setup>
 import {ref} from 'vue'
 import Card from "@/components/Card.vue";
+
+const getImageUrl = (name) => {
+  return new URL(`../assets/images/cards/${name}.jpg`, import.meta.url).href
+}
 
 const cards = ref([
   {
