@@ -9,7 +9,7 @@
     </div>
     <swiper :navigation="{ prevEl: '.prev', nextEl: '.next' }" :modules="modules" :loop="true" :pagination="pagination">
       <swiper-slide v-for="slide in slides">
-        <img class="life__image" :src="`../src/assets/images/slides/${slide.image}.jpg`" :alt="`${slide.image}`">
+        <img class="life__image" :src="getImageUrl(slide.image)" :alt="`${slide.image}`">
       </swiper-slide>
     </swiper>
     <div class="life__pagination"></div>
@@ -27,6 +27,10 @@ import IconSliderNext from "@/components/icons/IconSliderNext.vue";
 import IconSliderPrev from "@/components/icons/IconSliderPrev.vue";
 
 const modules = [Navigation, Pagination]
+
+const getImageUrl = (name) => {
+  return new URL(`../assets/images/slides/${name}.jpg`, import.meta.url).href
+}
 
 const pagination = ref(
     {
