@@ -7,7 +7,7 @@
       <div class="compensation__row">
         <div class="compensation__item" v-for="(item, index) in compensations" :key="index">
           <div class="compensation__icon"
-               :style="{ backgroundImage: `url('../assets/images/icons/${item.icon}.svg')` }"></div>
+               :style="{ backgroundImage: `url('@/assets/images/icons/${item.icon}.svg')` }"></div>
           <span class="compensation__text">{{ item.title }}</span>
         </div>
       </div>
@@ -22,7 +22,7 @@
       <div class="compensation__row">
         <div class="compensation__item" v-for="(item, index) in motivation" :key="index">
           <div class="compensation__icon"
-               :style="{ backgroundImage: `url('../assets/images/icons/${item.icon}.svg')` }"></div>
+               :style="{ backgroundImage: `url('@/assets/images/icons/${item.icon}.svg')` }"></div>
           <span class="compensation__text">{{ item.title }}</span>
         </div>
       </div>
