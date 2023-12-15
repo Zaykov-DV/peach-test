@@ -40,7 +40,7 @@ const clickOnTab = (tabName) => {
     border-bottom: 3px solid transparent;
     cursor: pointer;
     transition: all .3s ease-in-out;
-    text-wrap: nowrap;
+    white-space: nowrap;
 
     &:last-child {
       margin-right: 0;
