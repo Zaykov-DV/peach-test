@@ -22,7 +22,10 @@
             @changeTab="changeTab">
       </Tabs>
     </div>
-    <div class="location__map" :class="{'is-open': isDropdownOpen}"></div>
+    <div class="location__map" :class="{'is-open': isDropdownOpen}">
+      <img class="location__image" src="@/assets/images/map.jpg" :alt="'map'">
+      <CitiesLocation class="location__svg" :checkedCity="selectedTab"/>
+    </div>
   </section>
 </template>
 
@@ -32,10 +35,12 @@ import {ref} from 'vue'
 import Tabs from '@/components/UI/Tabs.vue'
 import IconArrow from "@/components/icons/IconArrow.vue";
 import DropdownItem from "@/components/DropdownItem.vue";
+import CitiesLocation from "@/components/CitiesLocation.vue";
 
 defineProps({
   isMobile: Boolean
 })
+
 
 const tabs = ref([
   {name: 'all', label: 'Все'},
@@ -46,6 +51,7 @@ const tabs = ref([
   {name: 'volga', label: 'Волга'},
   {name: 'ural', label: 'Урал'},
   {name: 'siberia', label: 'Сибирь'},
+  {name: 'east', label: 'Дальний Восток'}
 ])
 
 const regions = ref([
@@ -111,23 +117,27 @@ const toggleMenu = () => {
     max-width: 1250px;
     width: 100%;
     height: 600px;
-    background: url("../assets/images/map.jpg") no-repeat left;
+    //background: url("../assets/images/map.jpg") no-repeat left;
     transition: opacity .3s ease-in-out;
-
-    &::before {
-      content: "";
-      max-width: 1250px;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      background: url("../assets/images/icons/cities.svg") no-repeat left;
-      top: 64px;
-      left: 4px;
-    }
+    overflow-x: scroll;
+    overflow-y: hidden;
 
     &.is-open {
       opacity: .1;
     }
+  }
+
+  &__image {
+    width: 100%;
+    min-width: 1190px;
+    min-height: 600px;
+    height: auto;
+  }
+
+  &__svg {
+    position: absolute;
+    top: 122px;
+    left: 6px;
   }
 
   &__tabs {
@@ -159,6 +169,13 @@ const toggleMenu = () => {
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .location {
+    &__text {
+      font-size: 20px;
+    }
+  }
+}
 
 @media screen and (max-width: $smDesktopWidth) {
   .location {
@@ -177,6 +194,20 @@ const toggleMenu = () => {
       height: 400px;
     }
 
+    &__image {
+      width: 100%;
+      min-width: 792px;
+      min-height: 400px;
+      height: 100%;
+    }
+
+    &__svg {
+      width: auto;
+      height: 83%;
+      top: 80px;
+      left: 4px;
+    }
+
     &__dropdown {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -189,8 +220,12 @@ const toggleMenu = () => {
 @media screen and (max-width: $tableWidth) {
   .location {
     &__dropdown {
-      gap: 0;
+      gap: 10px;
       padding: 20px 70px;
+    }
+
+    &__dropdown-block {
+      margin: 0;
     }
   }
 }
@@ -209,7 +244,6 @@ const toggleMenu = () => {
 
     &__dropdown {
       padding: 18px 25px;
-      gap: 0;
     }
   }
 }
